@@ -6,6 +6,8 @@ import android.widget.EditText;
 import android.widget.Button;
 import android.widget.TextView;
 import android.view.View;
+import android.content.Intent;
+
 
 import java.time.format.FormatStyle;
 import java.util.Calendar;
@@ -50,5 +52,10 @@ public class MainActivity extends AppCompatActivity {
         tvText1.setText(" <3   Raficapi<3 dolazi za:");
         tvCurrentMonth.setText(String.valueOf(noOfDaysBetween) + " dan");
         tvText2.setText("Što znači da je <3 Mamaka <3 u 8. mjesecu");
+    }
+
+    public void buLogin(View view) {
+        Intent intent = new Intent(this, SignIn.class);
+        startActivity(intent);
     }
 }
