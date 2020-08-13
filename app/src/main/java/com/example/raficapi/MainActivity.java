@@ -16,7 +16,7 @@ import java.time.temporal.ChronoUnit;
 public class MainActivity extends AppCompatActivity {
 
     EditText etExpectedDate;
-    TextView tvCurrentMonth, tvText1, tvText2;
+    TextView tvCurrentMonth, tvText1, tvText2, tvText4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +25,17 @@ public class MainActivity extends AppCompatActivity {
         etExpectedDate = (EditText) findViewById(R.id.etExpectedDate);
         tvText1 = (TextView) findViewById(R.id.tvText1);
         tvText2 = (TextView) findViewById(R.id.tvText2);
+        tvText4 = (TextView) findViewById(R.id.tvText4);
         tvCurrentMonth = (TextView) findViewById(R.id.tvCurrentMonth);
+
+
+        Calendar calendar = Calendar.getInstance();
+        int weekInYear = calendar.get(Calendar.WEEK_OF_YEAR);
+        tvText4.setText("Tjedan u godini: " + weekInYear);
     }
 
     public void buCalculate (View view){
         //int DOB = Integer.parseInt(etExpectedDate.getText().toString());
-
 
         LocalDate todayDate = LocalDate.now();
         String dateAfterString = "2020-10-03";
