@@ -20,11 +20,15 @@ public class SignIn extends AppCompatActivity {
 
     String userName = "mamaka";
     String password = "1";
+    String expectedDate = "2020-10-03";
+    String babyName = "Rafael";
 
     public void buTryLogin(View view) {
         if (userName.equals(etUsername.getText().toString()) && password.equals(etPassword.getText().toString())){
             Intent intent = new Intent(this, UserDashboard.class);
             intent.putExtra("user", userName);
+            intent.putExtra("expdate", expectedDate);
+            intent.putExtra("babyname", babyName);
             startActivity(intent);
         }
     }
