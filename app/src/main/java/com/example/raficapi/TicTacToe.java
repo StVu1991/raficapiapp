@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class TicTacToe extends AppCompatActivity {
 
@@ -66,6 +67,7 @@ public class TicTacToe extends AppCompatActivity {
             buSelected.setBackgroundColor(Color.GREEN);
             ArrPlayer1.add(FieldID);
             ActivePlayer = 2;
+            AutoPlay();
         }
         else if (ActivePlayer == 2){
             buSelected.setText("O");
@@ -76,8 +78,57 @@ public class TicTacToe extends AppCompatActivity {
 
         buSelected.setEnabled(false); //To prevent repeated clicking of same button
         CheckWinner();
-
     }
+
+    void AutoPlay(){
+        ArrayList<Integer> EmptyCells = new ArrayList<>(); //All unselected cells
+        //Find emtpy field
+        for (int cellID=1; cellID<10 ;cellID++){
+            if (!(ArrPlayer1.contains(cellID) || ArrPlayer2.contains(cellID))){
+                EmptyCells.add(cellID);
+            }
+        }
+
+        Random r = new Random();
+        int RandomCell = r.nextInt(EmptyCells.size()-0) + 0; //
+        int CellID = EmptyCells.get(RandomCell);
+
+        Button buSelected;
+        switch (CellID){
+            case 1:
+                buSelected = (Button) findViewById(R.id.bu1);
+                break;
+            case 2:
+                buSelected = (Button) findViewById(R.id.bu2);
+                break;
+            case 3:
+                buSelected = (Button) findViewById(R.id.bu3);
+                break;
+            case 4:
+                buSelected = (Button) findViewById(R.id.bu4);
+                break;
+            case 5:
+                buSelected = (Button) findViewById(R.id.bu5);
+                break;
+            case 6:
+                buSelected = (Button) findViewById(R.id.bu6);
+                break;
+            case 7:
+                buSelected = (Button) findViewById(R.id.bu7);
+                break;
+            case 8:
+                buSelected = (Button) findViewById(R.id.bu8);
+                break;
+            case 9:
+                buSelected = (Button) findViewById(R.id.bu9);
+                break;
+            default:
+                buSelected = (Button) findViewById(R.id.bu1);
+                break;
+        }
+        PlayGame(CellID, buSelected);
+    }
+
 
     void CheckWinner(){
         int Winner = -1;
