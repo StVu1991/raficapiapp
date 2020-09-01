@@ -9,11 +9,9 @@ import android.view.View;
 import android.content.Intent;
 import java.util.Calendar;
 
-
 public class MainActivity extends AppCompatActivity {
 
     TextView  tvText4;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void buLogin(View view) {
         Intent intent = new Intent(this, SignIn.class);
+        startActivity(intent);
+    }
+
+    public void buStartTTT(View view) {
+        Intent intent = new Intent(this, TicTacToe.class);
         startActivity(intent);
     }
 }

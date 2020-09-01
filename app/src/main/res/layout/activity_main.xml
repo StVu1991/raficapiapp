@@ -29,4 +29,15 @@
         app:layout_constraintHorizontal_bias="0.429"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/buTTT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="60dp"
+        android:onClick="buStartTTT"
+        android:text="Križić Kružić"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
