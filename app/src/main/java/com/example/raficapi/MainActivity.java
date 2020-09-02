@@ -2,6 +2,9 @@ package com.example.raficapi;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,9 +27,31 @@ public class MainActivity extends AppCompatActivity {
         tvText4.setText("Tjedan u godini: " + weekInYear);
     }
 
-    public void buCalculate (View view){
-        //int DOB = Integer.parseInt(etExpectedDate.getText().toString());
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.mainmenu, menu);
+        return true;
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()) {
+            case R.id.Home:
+                //newGame();
+                return true;
+            case R.id.Games:
+                Intent intent = new Intent(this, TicTacToe.class);
+                startActivity(intent);
+                return true;
+            case R.id.Stroller:
+                Intent intent_strollers = new Intent(this, Strollers.class);
+                startActivity(intent_strollers);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+            }
+        }
 
     public void buLogin(View view) {
         Intent intent = new Intent(this, SignIn.class);

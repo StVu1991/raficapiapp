@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <item
+        android:id="@+id/Home"
+        android:icon="@drawable/home"
+        android:title="Početna"
+        app:showAsAction="ifRoom"
+        ></item>
+    <item
+        android:id="@+id/Games"
+        android:icon="@drawable/games"
+        android:title="Igre"
+        app:showAsAction="ifRoom"
+        ></item>
+    <item
+        android:id="@+id/Stroller"
+        android:icon="@drawable/stroller"
+        android:title="Kolica"
+        app:showAsAction="ifRoom"
+        ></item>
+</menu>

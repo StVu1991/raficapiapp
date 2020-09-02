@@ -2,7 +2,9 @@ package com.example.raficapi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import java.time.LocalDate;
@@ -56,5 +58,10 @@ public class UserDashboard extends AppCompatActivity {
             tvDaysLeft.setText(String.valueOf(noOfDaysBetween) + " dana");
         }
 
+    }
+
+    public void buOpenStrollerActivity(View view) {
+        Intent intent = new Intent(this, Strollers.class);
+        startActivity(intent);
     }
 }
